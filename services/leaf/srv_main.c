@@ -37,12 +37,12 @@ static void leaf_release_request_data(void *data);
 static int leaf_io(char *wbuf, int *wlen, char *rbuf, int *rlen, int iseof,
 			ci_request_t *req);
 
-extern int ci_generic_compress_to_membuf(int encodeMethod, const char *inbuf, size_t inlen, ci_membuf_t *outbuf, ci_off_t max_size);
-extern int ci_generic_decompress_to_membuf(int encodeMethod, const char *inbuf, size_t inlen, ci_membuf_t *outbuf, ci_off_t max_size);
+//extern int ci_generic_compress_to_membuf(int encodeMethod, const char *inbuf, size_t inlen, ci_membuf_t *outbuf, ci_off_t max_size);
+//extern int ci_generic_decompress_to_membuf(int encodeMethod, const char *inbuf, size_t inlen, ci_membuf_t *outbuf, ci_off_t max_size);
 int (*ci_decode)(int encodeMethod, const char *inbuf, size_t inlen,
-		 ci_membuf_t *outbuf, ci_off_t max_size) = ci_generic_decompress_to_membuf;
+		 ci_membuf_t *outbuf, ci_off_t max_size) = ci_decompress_to_membuf;
 int (*ci_encode)(int encodeMethod, const char *inbuf, size_t inlen,
-		 ci_membuf_t *outbuf, ci_off_t max_size) = ci_generic_compress_to_membuf;
+		 ci_membuf_t *outbuf, ci_off_t max_size) = ci_compress_to_membuf;
 
 /*
    The leaf_req_data structure will store the data required to serve an ICAP request.
