@@ -1,3 +1,6 @@
+CONFIGDIR = @CONFDIR@
+cicapdatadir=@DATADIR@
+cicapmoduledir=@MODSDIR@
 
 pkglib_LTLIBRARIES=srv_leafinfo.la
 
