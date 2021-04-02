@@ -2,7 +2,7 @@ CONFIGDIR = @CONFDIR@
 cicapdatadir=@DATADIR@
 cicapmoduledir=@MODSDIR@
 
-pkglib_LTLIBRARIES=srv_leaf.la
+cicapmodule_LTLIBRARIES=srv_leaf.la
 
 AM_CPPFLAGS=-I$(top_srcdir)/ -I$(top_srcdir)/include/ 
 
