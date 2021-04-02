@@ -20,12 +20,6 @@
    functions */
 #undef HAVE_CICAP_DECOMPRESS_TO
 
-/* Define HAVE_CLAMAV if clamav is installed */
-#undef HAVE_CLAMAV
-
-/* Define HAVE_CL_SCAN_OPTIONS if have clamav 0.101.x or newer */
-#undef HAVE_CL_SCAN_OPTIONS
-
 /* Define to 1 if you have the <ctype.h> header file. */
 #undef HAVE_CTYPE_H
 
@@ -37,15 +31,6 @@
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
-
-/* Define HAVE_LIBCLAMAV_095 if have clamav 0.95.x or newer */
-#undef HAVE_LIBCLAMAV_095
-
-/* Define HAVE_LIBCLAMAV_09X if have clamav 0.90.x or newer */
-#undef HAVE_LIBCLAMAV_09X
-
-/* Define HAVE_LIBCLAMAV_LIMITS_MAXRATIO if has cl_limits.maxratio */
-#undef HAVE_LIBCLAMAV_LIMITS_MAXRATIO
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -125,10 +110,6 @@
 # undef __EXTENSIONS__
 #endif
 
-
-/* Define USE_VSCAN_PROFILES if configuration profiles for virus_scan service
-   are enabled */
-#undef USE_VSCAN_PROFILES
 
 /* Version number of package */
 #undef VERSION
