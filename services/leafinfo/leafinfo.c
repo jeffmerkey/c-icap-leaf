@@ -85,9 +85,10 @@ char *comma_snprintf(char *buffer, int size, const char *format, ...)
 		*dest = '\0';
 		for (i=0; (i < strlen((const char *)buf)) && (dest >= buffer) && (src >= buf); i++)
 		{
-			if (i && !(i % 3))
+			if (i && !(i % 3)) {
 				*--dest = ',';
-				*--dest = *--src;
+			}
+			*--dest = *--src;
 		}
 		return (char *)dest;
 	}

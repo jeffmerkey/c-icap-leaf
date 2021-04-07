@@ -20,8 +20,8 @@
 #include <assert.h>
 #include <ctype.h>
 #include <regex.h>
+#include <errno.h>
 
-#include <my_global.h>
 #include <mysql.h>
 #include <mysqld_error.h>
 #include <errmsg.h>
