@@ -1,0 +1,101 @@
+# mysql database host settings, can use localhost or mysql server ip address
+# or hostname.
+# default is db_host = localhost;
+db_host = 127.0.0.1;
+
+# default database name for leaf storage.
+db_name = leafpage;
+
+# default capture table name.
+db_table = capture;
+
+# database user and password settings.
+db_user = root;
+db_pass = 
+
+#
+# tags all matching domains and save by default
+# format is comma delimited.  i.e. include = youtube.com,google.com
+include = youtube.com
+
+#
+# tags all matching domains and skips them by default
+# format is comma delimited.  i.e. exclude = lds.org, mormon.org
+exclude = lds.org
+
+# database mode is insert or ring buffer (i.e. insert(0), ring(1)).
+# in mode 0 the sql "insert" command will be used instead of sql "update" or "replace"
+# commands. ring(1) specifies a maximum database size and will treat the db like a ring buffer. 
+# While running in ring buffer mode, "update" or "replace" commands will be used to 
+# update the capture table after it wraps. Insert(0) mode is much faster and 
+# allows the leafcon web console to operate with minimal or no locking during
+# reads.  
+# 0 - insert mode
+# 1 - ring buffer mode
+db_mode = 0;
+
+# in ring buffer mode, db_max_size specifies the maximum number 
+# of records in the database before it wraps back to the start of  
+# the table.  In insert mode, will stop creating records after
+# db_max_size is reached.  If set to 0, then there is no limit 
+# and the database will continuously grow in size. 
+db_max_size = 200000;
+
+# maximum number of queue elements per process for processing by
+# mysql pthreads.  default value is 100
+db_queue_depth = 200;
+
+# maximum number of mysql queue pthreads per process for processing 
+# mysql queries.  default value is 4
+db_queue_threads = 16;
+
+# determine if leaf will process requests in a detached [db_queue_mode = 1] (drops 
+# pages if overloaded) or whether it will block calling pthreads if overloaded
+# and not drop pages [db_queue_mode = 0].   Default is to run in synchronous 
+# queue mode (0).
+db_queue_mode = 0;
+
+# run c-icap pthreads in synchronous mode (1) instead of queueing mode (0).  this
+# setting will block c-icap pthreads (client requests) until the mysql transaction completes.
+db_queue_sync = 0;
+
+# skip size specifies minimum html extract data length for storage of the page
+# and it's meta data.  This will skip html responses which are either empty html
+# pages which contain only javascript or 302 redirect headers which are used to
+# scrape and display ads.  
+# value of 0 allows storage of all html reponses. default value is 1024 bytes which 
+# filters out most ad pages and redirects used to scrape ads. 
+skip_length = 1024;
+
+# condensed max length specifies maximum length of html extract. 
+# value of 0 specifies any length
+condensed_max_length = 1024;
+
+# non-zero value specifies show all skipped (non-html) 204 requests 
+# in the c-icap log when run on console or debug mode.  To invoke c-icap
+# in debug mode to display this information, use the following syntax:
+# $ c-icap -N -D -d 4 <enter>
+show_skipped_requests = 0;
+
+# remaining disk space threshold for monitoring free space on whichever
+# storage device mysqld is using for its tables.  Since mysql and maria both 
+# crash the system if they run out of disk space, this value specifies at
+# what point leaf will stop allocating disk space if the specified amount 
+# of free space is less than this value.  Default is set to 1GB of free space,
+# at which point leaf will start either dropping pages or recycling the current 
+# capture table.
+db_free_space_threshold = 1073741824;
+
+# db_path overrides the configuration options listed in 
+# /etc/my.cnf for mysql and will instead check free space 
+# thresholds at the specified db_path directory.  It is not
+# recommended to change this value except in limited situations.
+# db_path = /var/lib/mysql
+
+# DEBUG section do not set or change any of these values unless you know what
+# you are doing
+#
+leaf_bypass = 0;
+mysql_bypass = 0;
+
+
