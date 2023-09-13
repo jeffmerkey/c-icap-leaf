@@ -143,7 +143,7 @@ int leaf_init_service(ci_service_xdata_t * srv_xdata,
         con = NULL;
         db_active = 0;
 	get_network_keys();
-	license_present = get_license();
+	//license_present = get_license();
     	return ret;
 }
 
@@ -386,11 +386,13 @@ int leaf_check_preview_handler(char *preview_data, int preview_data_len,
 	const char *content_length = ci_http_response_get_header(req, "Content-Length");
 	if (content_length) {};
 
+/*
 	// if no valid license if found, then skip all requests
 	if (!license_present || license_present->s.signature != LICENSE_SIGNATURE) {
 		//ci_debug_printf(4, "leaf: valid license not found, skipping request\n");
 		return CI_MOD_ALLOW204;
 	}	
+*/
 
 	if (check_mysql_free_space()) {
 		//ci_debug_printf(4, "leaf: mysql free space beneath out of space threshold, skipping request\n");
