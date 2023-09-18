@@ -2,7 +2,7 @@
 %define cicapname c-icap
 
 Summary:          Leaf ICAP service
-License:          Proprietary
+License:          LGPL
 Summary:          ICAP leaf service
 Name:             c-icap-leaf
 Version:          0.5.X
