@@ -2,11 +2,11 @@
 %define cicapname c-icap
 
 Summary:          Leaf ICAP service
-License:          LGPL
+License:          Proprietary
 Summary:          ICAP leaf service
 Name:             c-icap-leaf
 Version:          0.5.X
-Release:          1%{?dist}
+Release:          2%{?dist}
 
 Source0:          http://sourceforge.net/projects/c-icap/files/c-icap/0.5.x/%{name}-%{version}.tar.xz
 URL:              http://%{name}.sourceforge.net/
