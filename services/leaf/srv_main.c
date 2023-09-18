@@ -589,8 +589,7 @@ int leaf_end_of_data_handler(ci_request_t *req)
 	struct leaf_req_data *leaf_data = ci_service_data(req);
 	int ccode = 0;
 
-	ci_debug_printf(4, "leaf: end of data handler called body size: %lld\n",
-			(long long int)ci_membuf_size(leaf_data->inbuf));
+	ci_debug_printf(4, "leaf: end of data handler called body size: %lld\n",(long long int)leaf_data->inbuf->endpos);
 
 	if (leaf_bypass) {
 	 	bypass_stats(leaf_data->inbuf->endpos);
