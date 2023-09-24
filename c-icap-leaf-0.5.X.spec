@@ -8,7 +8,7 @@ Name:             c-icap-leaf
 Version:          0.5.X
 Release:          2%{?dist}
 
-Source0:          http://sourceforge.net/projects/c-icap/files/c-icap/0.5.x/%{name}-%{version}.tar.xz
+Source0:          http://sourceforge.net/projects/c-icap/files/c-icap/0.5.x/%{name}-%{version}.tar.gz
 URL:              http://%{name}.sourceforge.net/
 Source1:          c-icap.leaf.defaults
 
