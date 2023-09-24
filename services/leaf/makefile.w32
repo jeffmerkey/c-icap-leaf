@@ -5,7 +5,7 @@ all: srv_leaf.Dll
 .c.obj:
 	$(cc) /I..\..\include /I..\..\ $(cdebug) $(cflags) $(cvarsdll) -I. -DCI_BUILD_MODULE -DUNICODE $*.c
 
-srv_translate.Dll: srv_main.obj srv_leaf.obj srv_compression.obj
+srv_translate.Dll: srv_main.obj srv_leaf.obj srv_strstr.obj
 	$(link) $(linkdebug) $(dlllflags) /LIBPATH:..\..\ c_icap.lib -def:srv_leaf.def -out:$*.Dll $** $(DLL_ENTRY)  $(EXTRA_LIBS)
 
 clean:

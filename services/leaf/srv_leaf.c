@@ -1634,14 +1634,6 @@ int init_database(void *con, int flags)
 unsigned long long seconds;
 unsigned long long average;
 
-void update_license_stats(LICENSE_KEY *license)
-{
-	if (stats_ptr && license && license->s.signature == LICENSE_SIGNATURE) {
-		stats_ptr->license = 1;
-		memmove(stats_ptr->license_data, license->s.key, 128);
-	}
-}
-
 void init_stats(void)
 {
 	if (stats_ptr) {

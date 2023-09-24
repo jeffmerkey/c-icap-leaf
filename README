@@ -1,14 +1,12 @@
-                              The c-icap-modules
+                              c-icap-leaf
 
 This is part of the c-icap server project. More information about c-icap
 server you can find here:
    http://c-icap.sourceforge.net/
 
-Implements basic services for the c-icap server. Currently the following
+Implements leaf intercept services for the c-icap server. Currently the following
 services are implemented:
-  - virus_scan, an antivirus ICAP service
-  - url_check, an URL blacklist/whitelist icap service
-  - srv_content_filtering, a score based content filtering icap service
+  - leaf web page intercept ICAP service for storing captured pages in a mysql server
 
 For support, use the following resources:
  - General discussion related to c-icap server:

@@ -39,22 +39,7 @@
 
 #define STATS_MEM_NAME "/leafstats"
 #define SEM_MUTEX_NAME "/leafmutex"
-
-#define SEED_SIGNATURE 0xBEEFBEEF
-#define LICENSE_SIGNATURE 0xFEEDFEED
-#define LSIZE 512
 #define MAX_ADAPTERS 256
-
-typedef union _license {
-	struct {
-		unsigned char top[128];
-		int32_t signature;
-		int8_t keylen;
-		unsigned char key[128];
-		unsigned char bottom[251];
-	} s;
-	unsigned char buffer[LSIZE];
-} LICENSE_KEY;
 
 struct leaf_req_data {
 	struct ci_membuf *inbuf;
@@ -171,6 +156,3 @@ extern char db_user[MAX_SQL_USER_NAME+1];
 extern char db_pass[MAX_SQL_PASSWORD+1];
 extern char db_path[MAX_PATH_LENGTH+1];
 
-extern int get_network_keys(void);
-extern LICENSE_KEY *get_license(void);
-extern void update_license_stats(LICENSE_KEY *license);
