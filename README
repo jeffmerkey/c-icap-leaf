@@ -13,3 +13,7 @@ For support, use the following resources:
    c-icap-users@lists.sourceforge.net
  - Basic installation and configuration instructions:
    https://sourceforge.net/p/c-icap/wiki/configcicap/
+
+For more information see the file README.pdf for more detailed description of the 
+c-icap-leaf module and how it works and can be configured.
+
