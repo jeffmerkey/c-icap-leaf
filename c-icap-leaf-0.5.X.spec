@@ -3,7 +3,6 @@
 
 Summary:          Leaf ICAP service
 License:          LGPL
-Summary:          ICAP leaf service
 Name:             c-icap-leaf
 Version:          0.5.X
 Release:          2%{?dist}
